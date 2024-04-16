@@ -3,13 +3,13 @@ import cv2
 import imutils
 
 
-image = cv2.imread ("images/imageTramp.png")
+image = cv2.imread ("test3.png")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-gray = cv2.GaussianBlur(gray, (1, 1), 0)
+gray = cv2.GaussianBlur(gray, (3, 3), 0)
 
-edges = cv2.Canny(gray, 10, 250)
+edges = cv2.Canny(gray, 10, 200)
 
-kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (7, 7))
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (100, 100))
 closed = cv2.morphologyEx(edges, cv2.MORPH_CLOSE, kernel)
 
 cnts = cv2.findContours(closed.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)

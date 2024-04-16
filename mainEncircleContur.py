@@ -3,7 +3,7 @@ import cv2
 import imutils
 
 
-image = cv2.imread ("images/imageTramp.png")
+image = cv2.imread ("images/imagePetr.png")
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 gray = cv2.GaussianBlur(gray, (1, 1), 0)
 
